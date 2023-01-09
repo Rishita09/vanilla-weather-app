@@ -11,28 +11,51 @@ h1 {
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 li {
-  color: #878787;
+  color: #212529;
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 20px;
 }
-
+a {
+  text-decoration: none;
+}
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 640px;
   margin: 100px auto;
 }
 .weather-app {
   border: 1px solid #dadde1;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .weather-temperature img {
-  margin-right: 10px;
+  margin-right: 6px;
+  height: 65px;
+  width: 65px;
 }
 .weather-temperature strong {
-  font-size: 40px;
-  line-height: 1;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.measures {
+  color: #9f493b;
+  font-weight: bold;
+}
+.units {
+  text-decoration: none;
+  line-height: 2;
+  font-size: 14px;
+}
+#current-city {
+  color: #064b4b;
+  font-weight: 500;
+}
+#weather-type {
+  color: #9f490c;
+  font-weight: 500;
 }

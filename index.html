@@ -43,27 +43,33 @@
               </div>
             </div>
           </div> -->
-          <div class="row">
-            <div class="col-md-4">
-              <h1>London</h1>
-              <ul>
-                <li>Last Updated:</li>
-                <li>Fri 8/1 at 14:19</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h1>Cloudy Sky</h1>
-              <ul>
-                <li>Humidity: 94%</li>
-                <li>Wind : 6mph</li>
-              </ul>
-            </div>
-            <div class="col-md-4 weather-temperature">
-              <img
-                src="https://jocular-bavarois-d5295e.netlify.app/images/sun.png"
-                alt="sunny"
-              />
-              <strong>0</strong> °C | °F
+          <div class="weather-description">
+            <div class="row">
+              <div class="col-md-4">
+                <h1 id="current-city">London</h1>
+                <ul>
+                  <li>Last Updated:</li>
+                  <li>Fri 8/1 at 14:19</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h1 id="weather-type">Cloudy Sky</h1>
+                <ul>
+                  <li>Humidity: <span class="measures">94</span>%</li>
+                  <li>Wind : <span class="measures">6</span>mph</li>
+                </ul>
+              </div>
+              <div class="col-md-4 d-flex weather-temperature">
+                <img
+                  src="https://jocular-bavarois-d5295e.netlify.app/images/sun.png"
+                  alt="sunny"
+                  id="icon"
+                />
+                <strong>12</strong>
+                <span class="units"
+                  ><a href="#"> °C </a>| <a href="#">°F</a></span
+                >
+              </div>
             </div>
           </div>
         </div>
