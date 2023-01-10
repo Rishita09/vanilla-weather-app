@@ -18,7 +18,6 @@ li {
   color: #212529;
   font-size: 15px;
   font-weight: 500;
-  line-height: 20px;
 }
 a {
   text-decoration: none;
@@ -39,7 +38,7 @@ a {
   width: 65px;
 }
 .weather-temperature strong {
-  font-size: 56px;
+  font-size: 52px;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -61,4 +60,5 @@ a {
   text-transform: capitalize;
   color: #9f490c;
   font-weight: 500;
+  font-size: 20px;
 }
