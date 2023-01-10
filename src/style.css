@@ -24,7 +24,7 @@ a {
   text-decoration: none;
 }
 .weather-app-wrapper {
-  max-width: 640px;
+  max-width: 660px;
   margin: 100px auto;
 }
 .weather-app {
@@ -39,7 +39,7 @@ a {
   width: 65px;
 }
 .weather-temperature strong {
-  font-size: 60px;
+  font-size: 56px;
   line-height: 1.2;
   font-weight: 700;
 }
