@@ -32,6 +32,11 @@ a {
   border-radius: 8px;
   margin-bottom: 5px;
 }
+.col-5,
+.col-3,
+.col-2 {
+  padding: 5px;
+}
 .weather-temperature img {
   margin-right: 6px;
   height: 65px;
@@ -50,6 +55,11 @@ a {
   text-decoration: none;
   line-height: 2;
   font-size: 14px;
+}
+#twilight-info {
+  font-size: 12px;
+  margin-bottom: 0;
+  padding: 2px 16px;
 }
 #city {
   text-transform: capitalize;

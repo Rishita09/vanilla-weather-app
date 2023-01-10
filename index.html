@@ -24,47 +24,60 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <!-- <div class="search-form">
-            <div class="row">
-              <div class="col-4">
-                <input type="text" placeholder="Search city name.." />
+          <form id="search-form">
+            <div class="row mb-5">
+              <div class="col-5">
+                <input
+                  type="search"
+                  placeholder="Search City Name.."
+                  class="form-control"
+                  autofocus="on"
+                  id="input-city"
+                />
               </div>
               <div class="col-2">
-                <input type="submit" class="btn btn-primary" value="Search" />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
               </div>
               <div class="col-2">
-                <input type="submit" class="btn btn-warning" value="📍" />
+                <input type="button" value="📍" class="btn btn-warning w-100" />
               </div>
-              <div class="col-2">
-                <div class="card twilight info">
-                  <p class="card-text">
-                    Sunrise : 6:17 am Sunset &nbsp;: 6:02 pm
+              <div class="col-3">
+                <div class="card">
+                  <p id="twilight-info">
+                    Sunrise :<span id="sunrise"></span> am Sunset:<span
+                      id="sunset"
+                    ></span>
+                    pm
                   </p>
                 </div>
               </div>
             </div>
-          </div> -->
+          </form>
           <div class="weather-description">
             <div class="row">
               <div class="col-md-4">
-                <h1 id="city">london</h1>
+                <h1 id="city"></h1>
                 <ul>
                   <li>Last Updated:</li>
-                  <li id="date">Fri 8/1 at 14:19</li>
+                  <li id="date"></li>
                 </ul>
               </div>
               <div class="col-md-4">
-                <h1 id="description">cloudy sky</h1>
+                <h1 id="description"></h1>
                 <ul>
                   <li>
-                    Humidity: <span class="measures" id="humidity">94</span>%
+                    Humidity: <span class="measures" id="humidity"></span>%
                   </li>
-                  <li>Wind : <span class="measures" id="wind">6</span> mph</li>
+                  <li>Wind : <span class="measures" id="wind"></span> mph</li>
                 </ul>
               </div>
               <div class="col-md-4 d-flex weather-temperature">
                 <img src="" alt="sunny" id="icon" />
-                <strong id="temperature">12</strong>
+                <strong id="temperature"></strong>
                 <span class="units"
                   ><a href="#"> °C </a>| <a href="#">°F</a></span
                 >
