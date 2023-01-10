@@ -47,6 +47,10 @@ a {
   line-height: 1.2;
   font-weight: 700;
 }
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
 .measures {
   color: #9f493b;
   font-weight: bold;
