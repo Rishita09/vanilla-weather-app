@@ -3,7 +3,7 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    minutes = `0${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -22,6 +22,19 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatTime(timestamp) {
+  //calculate the time
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -30,7 +43,11 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
+  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  console.log(response.data.sys.sunrise);
   celciusTemp = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celciusTemp);
@@ -55,7 +72,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let inputCityElement = document.querySelector("#input-city");
   search(inputCityElement.value);
-  console.log(inputCityElement.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -86,4 +102,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search("New York");
+search("Bengaluru");

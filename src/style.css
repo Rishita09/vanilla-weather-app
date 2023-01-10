@@ -1,5 +1,6 @@
 body {
   font-family: "Comfortaa", cursive;
+  background-image: url("../images/appbg.jpg");
 }
 h1 {
   color: #878787;
@@ -22,6 +23,12 @@ li {
 a {
   text-decoration: none;
 }
+small {
+  margin: 120px;
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 4px;
+  border-radius: 10px;
+}
 .weather-app-wrapper {
   max-width: 660px;
   margin: 100px auto;
@@ -29,6 +36,7 @@ a {
 .weather-app {
   border: 1px solid #dadde1;
   padding: 30px;
+  background-color: rgba(175, 170, 170, 0.9);
   border-radius: 8px;
   margin-bottom: 5px;
 }
@@ -60,10 +68,15 @@ a {
   line-height: 2;
   font-size: 14px;
 }
+#heading {
+  padding-left: 150px;
+  color: white;
+  margin-bottom: 20px;
+}
 #twilight-info {
   font-size: 12px;
   margin-bottom: 0;
-  padding: 2px 16px;
+  padding: 2px;
 }
 #city {
   text-transform: capitalize;
