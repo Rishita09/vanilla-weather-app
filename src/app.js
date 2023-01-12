@@ -35,6 +35,41 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `         <div class="col-2">
+                <div class="weather-forecast-day">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/01n@2x.png"
+                  alt=""
+                  width="45"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max">18°</span> |
+                  <span class="weather-forecast-temperature-min"> 12°</span>
+                </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -47,7 +82,6 @@ function displayTemperature(response) {
   let sunsetElement = document.querySelector("#sunset");
   sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
-  console.log(response.data.sys.sunrise);
   celciusTemp = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celciusTemp);
@@ -61,6 +95,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -93,6 +128,7 @@ function displayCelciusTemperature(event) {
 }
 
 let celciusTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
