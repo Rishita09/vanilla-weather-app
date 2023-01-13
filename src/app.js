@@ -54,14 +54,14 @@ function displayForecast(response) {
     if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
-        `         <div class="col-2">
+        `      <div class="col-2" id="daily-forecast">
                 <div class="weather-forecast-day">${formatDay(
                   forecastDay.dt
                 )}</div>
                 <img
                   src="./images/${forecastDay.weather[0].icon}.png"  
                   alt=""
-                  width="45"
+                  id = "forecast-icon"
                 />
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperature-max">${Math.round(

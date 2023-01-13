@@ -16,93 +16,136 @@ ul {
   margin-top: 4px;
 }
 li {
-  color: #212529;
+  color: rgb(245, 246, 248);
   font-size: 15px;
   font-weight: 500;
 }
 a {
   text-decoration: none;
+  color: rgb(255, 202, 44);
 }
 small {
-  margin: 120px;
-  background-color: rgb(255, 255, 255, 0.8);
+  color: rgb(204, 224, 206);
+  margin: 70px;
+  background-color: rgb(9, 9, 9, 0.6);
   padding: 4px;
   border-radius: 10px;
 }
 .weather-app-wrapper {
   max-width: 660px;
-  margin: 150px auto;
+  margin: 120px auto;
 }
 .weather-app {
   border: 1px solid #dadde1;
   padding: 30px;
-  background-color: rgba(175, 170, 170, 0.9);
+  background: linear-gradient(
+    178.6deg,
+    rgb(20, 36, 50) 11.8%,
+    rgb(35, 79, 121) 83.8%
+  );
+  border: none;
   border-radius: 8px;
   margin-bottom: 5px;
+}
+.card {
+  background: none;
+  border: none;
+  box-shadow: 2px 2px rgb(218, 221, 225, 0.2);
 }
 .col-5,
 .col-3,
 .col-2 {
   padding: 5px;
 }
+.weather-temperature {
+  padding-right: 0;
+}
 .weather-temperature img {
-  margin-right: 6px;
+  margin-right: 2px;
   height: 65px;
   width: 65px;
   padding: 10px;
-  background-color: #9f493b;
+  background-color: rgb(182, 116, 108);
+  border: none;
   border-radius: 50%;
 }
 .weather-temperature strong {
   font-size: 52px;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 700;
+  color: rgb(245, 246, 248);
 }
 .weather-temperature .active {
-  color: black;
+  color: rgb(204, 224, 206);
   cursor: default;
 }
 .measures {
-  color: #9f493b;
+  color: rgb(182, 116, 108);
   font-weight: bold;
 }
 .units {
   text-decoration: none;
-  line-height: 2;
+  line-height: 2.8;
   font-size: 14px;
 }
+.weather-forecast-wrapper h1 {
+  color: rgb(204, 224, 206);
+  text-align: center;
+  margin-top: 35px;
+  font-weight: 600;
+}
 .weather-forecast {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
 }
 .weather-forecast-day {
   font-size: 16px;
   opacity: 0.8;
+  color: rgb(255, 228, 196);
 }
 .weather-forecast-temperatures {
   font-size: 14px;
+  color: rgb(255, 228, 196);
 }
 .weather-forecast-temperature-min {
   opacity: 0.4;
 }
 #heading {
   padding-left: 150px;
-  color: white;
+  /* color: #ffca2c; */
+  color: rgb(204, 224, 206);
   margin-bottom: 20px;
+  font-weight: 600;
 }
 #twilight-info {
+  color: rgb(255, 228, 196);
+  font-weight: 600;
   font-size: 12px;
   margin-bottom: 0;
   padding: 2px;
 }
 #city {
   text-transform: capitalize;
-  color: #064b4b;
+  color: rgb(250, 224, 206);
   font-weight: 500;
+  font-size: 22px;
 }
 #description {
   text-transform: capitalize;
-  color: #9f490c;
+  color: rgb(250, 224, 206);
   font-weight: 500;
   font-size: 20px;
+}
+#forecast-icon {
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  margin-bottom: 6px;
+}
+#daily-forecast {
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+}
+#daily-forecast:hover {
+  background-color: rgb(4, 4, 4, 0.5);
 }
