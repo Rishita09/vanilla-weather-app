@@ -59,9 +59,7 @@ function displayForecast(response) {
                   forecastDay.dt
                 )}</div>
                 <img
-                  src="http://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                  src="./images/${forecastDay.weather[0].icon}.png"  
                   alt=""
                   width="45"
                 />
@@ -88,6 +86,25 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function displayCity(response) {
+  city.innerHTML = response.data.name;
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = `${response.data.main.humidity}`;
+  wind.innerHTML = `${response.data.wind.speed}`;
+  getForecast(response.data.coord);
+}
+function displayCurrentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "72fcc2019b422e7c2787f6b074b1f6d4";
+  axios
+    .get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+    )
+    .then(displayCity);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -110,7 +127,7 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `./images/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
@@ -125,6 +142,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let inputCityElement = document.querySelector("#input-city");
   search(inputCityElement.value);
+  inputCityElement.value = "";
 }
 
 function displayFahrenheitTemperature(event) {
@@ -156,4 +174,10 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search("Bengaluru");
+function currentLocTemp() {
+  navigator.geolocation.getCurrentPosition(displayCurrentLocation);
+}
+let button = document.querySelector("#current-location");
+button.addEventListener("click", currentLocTemp);
+
+search("New york");
