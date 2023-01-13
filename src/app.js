@@ -180,4 +180,4 @@ function currentLocTemp() {
 let button = document.querySelector("#current-location");
 button.addEventListener("click", currentLocTemp);
 
-search("New york");
+search("Dresden");

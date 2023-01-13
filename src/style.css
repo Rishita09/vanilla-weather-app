@@ -57,6 +57,11 @@ small {
 .col-2 {
   padding: 5px;
 }
+#current-city-info {
+  margin-left: 25px;
+  max-width: 180px;
+  padding: 0;
+}
 .weather-temperature {
   padding-right: 0;
 }
